@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "toll",
-    "slug": "toll",
+    "name": "Instead",
+    "slug": "instead",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,8 +10,12 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.instead.app",
+      "permissions": [
+        "android.permission.QUERY_ALL_PACKAGES"
+      ],
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#DFF3E6",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +24,33 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "06d4a4d8-6170-4a58-8751-a6d2a75eb02e"
+      }
+    },
+    "owner": "searaaman",
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildArchs": [
+              "arm64-v8a"
+            ],
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "enableBundleCompression": true,
+            "manifestQueries": {
+              "package": [
+                "com.instagram.android"
+              ]
+            }
+          }
+        }
+      ],
+      "expo-font"
+    ]
   }
 }
